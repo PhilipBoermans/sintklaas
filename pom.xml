@@ -6,7 +6,15 @@
 
   <groupId>be.cronos.sinterklaas</groupId>
   <artifactId>sinterklaas-all</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
+  <modules>
+    <module>sinterklaasBackend</module>
+  </modules>
+
+  <properties>
+    <spring.version>4.1.1.RELEASE</spring.version>
+  </properties>
 
 </project>
