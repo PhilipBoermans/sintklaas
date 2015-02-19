@@ -1,2 +1,0 @@
-# sintklaas
-Sinterklaas App
