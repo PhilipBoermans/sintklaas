@@ -42,5 +42,4 @@ public class BaseConfig {
     jpaTransactionManager.setDataSource(dataSource());
     return jpaTransactionManager;
   }
-
 }

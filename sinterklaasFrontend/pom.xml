@@ -7,8 +7,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>jar</packaging>
-
+	<packaging>war</packaging>
 
 	<artifactId>sinterklaas-frontend</artifactId>
 	<dependencies>
@@ -17,16 +16,25 @@
 			<artifactId>primefaces</artifactId>
 			<version>5.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.2.8</version>
 		</dependency>
+
 		<dependency>
-			<groupId>com.sun.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-			<version>2.2.8</version>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
 		</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-web-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
 	</dependencies>
 
 </project>
