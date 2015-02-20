@@ -2,6 +2,7 @@ package be.cronos.sinterklaas.rest;
 
 
 import be.cronos.sinterklaas.domain.LetterEntity;
+import be.cronos.sinterklaas.domain.TemplateEntity;
 import be.cronos.sinterklaas.service.TemplateService;
 import org.fest.assertions.Assertions;
 import org.junit.Before;
@@ -27,13 +28,24 @@ public class TemplateControllerTest {
 
 
   @Test
-  public void testGetLetters() {
+  public void testGetAllLetters() {
     List<LetterEntity> expectedResult = new ArrayList<LetterEntity>();
-    when(templateService.getAll()).thenReturn(expectedResult);
+    when(templateService.getAllLetters()).thenReturn(expectedResult);
 
     List<LetterEntity> result = templateController.getLetters();
 
     Assertions.assertThat(result).isEqualTo(expectedResult);
-    verify(templateService).getAll();
+    verify(templateService).getAllLetters();
+  }
+
+  @Test
+  public void testGetAllTemplates() {
+    List<TemplateEntity> expectedResult = new ArrayList<TemplateEntity>();
+    when(templateService.getAllTemplates()).thenReturn(expectedResult);
+
+    List<TemplateEntity> result = templateController.getTemplates();
+
+    Assertions.assertThat(result).isEqualTo(expectedResult);
+    verify(templateService).getAllTemplates();
   }
 }
