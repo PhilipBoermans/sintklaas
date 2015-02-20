@@ -1,6 +1,6 @@
 package be.cronos.sinterklaas.repository;
 
-import be.cronos.sinterklaas.domain.TemplateEntity;
+import be.cronos.sinterklaas.domain.LetterEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -9,15 +9,16 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class TemplateRepositoryImpl implements TemplateRepository{
+public class LetterRepositoryImpl implements LetterRepository {
 
-  private static final String GET_ALL = "SELECT t FROM TemplateEntity t";
+  private static final String GET_ALL = "SELECT l FROM LetterEntity l";
+
   @PersistenceContext(unitName = "sinterklaasPU")
   private EntityManager em;
 
 
   @Override
-  public List<TemplateEntity> getAll() {
+  public List<LetterEntity> getAll() {
     Query query = em.createQuery(GET_ALL);
 
     return query.getResultList();

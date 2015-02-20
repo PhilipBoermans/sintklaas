@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TEMPLATE")
-public class TemplateEntity {
+@Table(name = "LETTER")
+public class LetterEntity {
 
   @Id
   private Long id;

@@ -4,7 +4,7 @@
   <persistence-unit name="sinterklaasPU">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-    <class>be.cronos.sinterklaas.domain.TemplateEntity</class>
+    <class>be.cronos.sinterklaas.domain.LetterEntity</class>
     <properties>
       <property name="show_sql" value="false"/>
     </properties>
