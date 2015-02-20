@@ -10,12 +10,16 @@ import java.util.List;
 @Service
 public class TemplateServiceImpl implements TemplateService {
 
+  private LetterRepository letterRepository;
+
   @Autowired
-  private LetterRepository templateRepository;
+  public TemplateServiceImpl(LetterRepository letterRepository){
+    this.letterRepository = letterRepository;
+  }
 
 
   @Override
   public List<LetterEntity> getAll() {
-    return templateRepository.getAll();
+    return letterRepository.getAll();
   }
 }

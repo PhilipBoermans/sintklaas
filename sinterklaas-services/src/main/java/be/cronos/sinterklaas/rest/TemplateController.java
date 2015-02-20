@@ -11,8 +11,13 @@ import java.util.List;
 @RestController()
 public class TemplateController {
 
-  @Autowired
   private TemplateService templateService;
+
+  @Autowired
+  public TemplateController(TemplateService templateService) {
+    this.templateService = templateService;
+  }
+
 
   @RequestMapping(value = "/letters/all", produces = "application/json")
   public List<LetterEntity> getLetters() {
