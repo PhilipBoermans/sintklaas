@@ -15,8 +15,7 @@
     </div>
 
     <div class="row" id="rowBody">
-
-
+    Kies de tekst die u wilt gebruiken:
     </div>
 
     <div class="footer">
@@ -39,14 +38,14 @@
         }).then(function(data) {
             var items = [];
 
-
+            $( "<select>");
 
             $.each( data, function( index, value ) {
-                items.push( "<li id='" + value.id + "'>" + value.name + "</li>" );
+                items.push( "<option value='" + value.id + "'>" + value.name + "</option>" );
             });
 
-            $( "<ul/>", {
-                "class": "my-new-list",
+            $( "<select/>", {
+
                 html: items.join( "" )
             }).appendTo( "#rowBody" );
         });
