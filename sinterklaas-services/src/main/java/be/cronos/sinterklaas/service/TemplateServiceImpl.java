@@ -3,6 +3,7 @@ package be.cronos.sinterklaas.service;
 import be.cronos.sinterklaas.domain.LetterEntity;
 import be.cronos.sinterklaas.domain.TemplateEntity;
 import be.cronos.sinterklaas.repository.LetterRepository;
+import be.cronos.sinterklaas.repository.TemplateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

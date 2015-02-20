@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface LetterRepository {
 
-  List<LetterEntity> getAll();
+    List<LetterEntity> getAll();
+
+    LetterEntity getOne(Long id);
 
 }
