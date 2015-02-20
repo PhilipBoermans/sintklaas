@@ -80,16 +80,7 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-    <script>
-        $(document).ready(function() {
-            $.ajax({
-                url: "http://localhost:8080/templates/all"
-            }).then(function(data) {
-                $('.greeting-id').append(data.id);
-                $('.greeting-content').append(data.name);
-            });
-        });
-    </script>
+
 
 
   </body>

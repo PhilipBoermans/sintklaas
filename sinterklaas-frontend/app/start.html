@@ -14,23 +14,8 @@
         <h3 class="text-muted">Brief van sinterklaas</h3>
     </div>
 
-    <div class="row">
-        <script>
-            $.getJSON( "http://localhost:8080/templates/all", function( data ) {
-                console.log(data);
-                var items = [];
-                $.each( data, function( obe ) {
-                    console.log(obe);
-                    items.push( "<li id='" + obe.id + "'>" + obe.name + "</li>" );
-                });
+    <div class="row" id="rowBody">
 
-                $( "<ul/>", {
-                    "class": "my-new-list",
-                    html: items.join( "" )
-                }).appendTo( "body" );
-            });
-
-        </script>
 
     </div>
 
@@ -48,20 +33,24 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
-    (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-                function () {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:8080/letters/all"
+        }).then(function(data) {
+            var items = [];
+
+
+
+            $.each( data, function( index, value ) {
+                items.push( "<li id='" + value.id + "'>" + value.name + "</li>" );
+            });
+
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "#rowBody" );
+        });
+    });
 </script>
 
 <!-- build:js(.) scripts/plugins.js -->
