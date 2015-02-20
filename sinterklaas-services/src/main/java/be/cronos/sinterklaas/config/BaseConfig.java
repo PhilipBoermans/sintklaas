@@ -21,6 +21,7 @@ public class BaseConfig {
   public DataSource dataSource() {
     return new EmbeddedDatabaseBuilder()
       .setType(EmbeddedDatabaseType.HSQL)
+      .setName("SINTERKLAAS_DB")
       .addScript("create-script.ddl")
       .setName("sintDB")
       .build();
