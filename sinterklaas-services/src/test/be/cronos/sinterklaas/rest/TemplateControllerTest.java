@@ -24,7 +24,7 @@ public class TemplateControllerTest {
     this.templateService = mock(TemplateService.class);
     this.templateController = new TemplateController(templateService);
   }
-/*
+
 
   @Test
   public void testGetLetters() {
@@ -36,6 +36,4 @@ public class TemplateControllerTest {
     Assertions.assertThat(result).isEqualTo(expectedResult);
     verify(templateService).getAll();
   }
-*/
-
 }
