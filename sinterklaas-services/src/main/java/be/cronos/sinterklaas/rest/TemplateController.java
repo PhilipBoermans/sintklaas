@@ -21,8 +21,7 @@ public class TemplateController {
 
 
   @RequestMapping(value = "/letters/all", produces = "application/json")
-  public List<LetterEntity> getLetters(HttpServletResponse response) {
-    response.addHeader("Access-Control-Allow-Origin", "*");
+  public List<LetterEntity> getLetters() {
     return templateService.getAll();
   }
 }
