@@ -15,7 +15,24 @@
     </div>
 
     <div class="row" id="rowBody">
-    Kies de tekst die u wilt gebruiken:
+
+        Kies de template die u wilt gebruiken:
+
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            image 1
+        </div>
+        <div class="col-lg-4">
+            image 2
+        </div>
+        <div class="col-lg-4">
+            image 3
+        </div>
+    </div>
+
+    <div class="row" id="tekstBody">
+        Kies de tekst die u wilt gebruiken:
     </div>
 
     <div class="footer">
@@ -32,22 +49,22 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8080/letters/all"
-        }).then(function(data) {
+        }).then(function (data) {
             var items = [];
 
-            $( "<select>");
+            $("<select>");
 
-            $.each( data, function( index, value ) {
-                items.push( "<option value='" + value.id + "'>" + value.name + "</option>" );
+            $.each(data, function (index, value) {
+                items.push("<option value='" + value.id + "'>" + value.name + "</option>");
             });
 
-            $( "<select/>", {
+            $("<select/>", {
 
-                html: items.join( "" )
-            }).appendTo( "#rowBody" );
+                html: items.join("")
+            }).appendTo("#tekstBody");
         });
     });
 </script>
